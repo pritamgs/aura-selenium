@@ -13,7 +13,7 @@ public class DriverSetup {
     threadLocalDriver.set(driver);
   }
 
-  public static WebDriver getDriver() {
+  public WebDriver getDriver() {
     return threadLocalDriver.get();
   }
 

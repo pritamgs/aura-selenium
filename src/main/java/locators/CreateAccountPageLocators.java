@@ -9,52 +9,52 @@ import org.openqa.selenium.support.How;
 public class CreateAccountPageLocators {
 
   @FindBy(how = How.ID, using = "account-creation_form")
-  public static WebElement createAccountForm;
+  public WebElement createAccountForm;
 
   @FindBy(how = How.XPATH, using = "//form[@id='account-creation_form']//preceding-sibling::div[contains(@class,'alert-danger')]")
-  public static WebElement personalInfoValidationError;
+  public WebElement personalInfoValidationError;
 
   @FindBy(how = How.ID, using = "submitAccount")
-  public static WebElement registerButton;
+  public WebElement registerButton;
 
   @FindBy(how = How.ID, using = "customer_firstname")
-  public static WebElement firstNameTextbox;
+  public WebElement firstNameTextbox;
 
   @FindBy(how = How.ID, using = "customer_lastname")
-  public static WebElement lastNameTextbox;
+  public WebElement lastNameTextbox;
 
   @FindBy(how = How.ID, using = "email")
-  public static WebElement emailTextbox;
+  public WebElement emailTextbox;
 
   @FindBy(how = How.ID, using = "passwd")
-  public static WebElement passwordTextbox;
+  public WebElement passwordTextbox;
 
   @FindBy(how = How.ID, using = "address1")
-  public static WebElement addressTextbox;
+  public WebElement addressTextbox;
 
   @FindBy(how = How.ID, using = "city")
-  public static WebElement cityTextbox;
+  public WebElement cityTextbox;
 
   @FindBy(how = How.ID, using = "id_state")
-  public static WebElement stateDropdown;
+  public WebElement stateDropdown;
 
   public static WebElement locateStateDropdownOption(WebDriver driver, String option) {
     return driver.findElement(By.xpath("//select[@id='id_state']/option[text()='" + option + "']"));
   }
 
   @FindBy(how = How.ID, using = "postcode")
-  public static WebElement zipCodeTextbox;
+  public WebElement zipCodeTextbox;
 
   @FindBy(how = How.ID, using = "id_country")
-  public static WebElement countryDropdown;
+  public WebElement countryDropdown;
 
-  public static WebElement locateCountryDropdownOption(WebDriver driver, String option) {
+  public WebElement locateCountryDropdownOption(WebDriver driver, String option) {
     return driver.findElement(By.xpath("//select[@id='id_country']/option[text()='" + option + "']"));
   }
 
   @FindBy(how = How.ID, using = "phone")
-  public static WebElement homePhoneTextbox;
+  public WebElement homePhoneTextbox;
 
   @FindBy(how = How.ID, using = "my-account")
-  public static WebElement myAccountPageBody;
+  public WebElement myAccountPageBody;
 }

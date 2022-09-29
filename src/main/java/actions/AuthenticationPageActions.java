@@ -7,26 +7,30 @@ import utils.SeleniumHelper;
 import utils.TestDataLoader;
 import org.testng.Assert;
 
-public class AuthenticationPageActions {
+public class AuthenticationPageActions extends AuthenticationPageLocators {
+  WebDriver driver;
+  SeleniumHelper seleniumHelper;
 
   public AuthenticationPageActions(WebDriver driver) {
-    PageFactory.initElements(driver, AuthenticationPageLocators.class);
+    PageFactory.initElements(driver, this);
+    seleniumHelper = new SeleniumHelper(driver);
+    this.driver = driver;
   }
 
   public void openAuthenticationPage() {
-    new SeleniumHelper().openURL(TestDataLoader.getProperty("myAccountUrl"));
+    seleniumHelper.openURL(TestDataLoader.getProperty("myAccountUrl"));
   }
 
   public void enterEmailAddress(String email) {
-    AuthenticationPageLocators.emailAddressTextBox.sendKeys(email);
+    emailAddressTextBox.sendKeys(email);
   }
 
   public void clickCreateAnAccountButton() {
-    AuthenticationPageLocators.createAnAccountButton.click();
+    createAnAccountButton.click();
   }
 
   public void verifyAccountCreationErrorMessageIsDisplayed() {
-    boolean isErrorDisplayed = new SeleniumHelper().isElementDisplayed(AuthenticationPageLocators.createAccountValidationError, 30);
+    boolean isErrorDisplayed = seleniumHelper.isElementDisplayed(createAccountValidationError, 30);
     Assert.assertTrue(isErrorDisplayed, "Create account error message should be displayed");
   }
 

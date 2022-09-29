@@ -7,11 +7,11 @@ import org.openqa.selenium.support.How;
 public class AuthenticationPageLocators {
 
   @FindBy(how = How.ID, using = "email_create")
-  public static WebElement emailAddressTextBox;
+  public WebElement emailAddressTextBox;
 
   @FindBy(how = How.ID, using = "SubmitCreate")
-  public static WebElement createAnAccountButton;
+  public WebElement createAnAccountButton;
 
   @FindBy(how = How.ID, using = "create_account_error")
-  public static WebElement createAccountValidationError;
+  public WebElement createAccountValidationError;
 }
